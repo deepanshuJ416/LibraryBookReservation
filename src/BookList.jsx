@@ -7,7 +7,7 @@ export default function BookList({books}) {
             <ul>
                 {books.map((book) => (
                     <li key={book.id}>{book.title}
-                    <Button variant="outlined" className="Reservation-Button">Reserve</Button>
+                    <Button variant="outlined" className='Reservation-Button'>Reserve</Button>
                     </li>
                 ))}
             </ul>
