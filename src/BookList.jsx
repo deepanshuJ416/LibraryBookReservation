@@ -1,6 +1,6 @@
 import Button from '@mui/material/Button';
 import './BookList.css';
-export default function BookList({books}) {
+export default function BookList({books, reservations , selectedUserId , onReserveBook}) {
     return (
         <div>
             <h3>Book List</h3>
