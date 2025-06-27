@@ -45,10 +45,18 @@ function App() {
   return (
     <div className='app-container'>
       <h2 className='app-title'>Library Book Reservation System</h2>
-      <UserSelector users={users} selectedUserId={selectedUserId} onSelectUser={setSelectedUserId} />
-      <BookSearch books={filteredBooks} onSearch={handleSearch} />
-      <BookList books={filteredBooks} reservations={reservations} onReserve={handleReserve} selectedUserId={selectedUserId}/>
-      <ReservationHistory reservations={reservations} books={books} users={users}/>
+      <div className="section-card">
+        <UserSelector users={users} selectedUserId={selectedUserId} onSelectUser={setSelectedUserId} />
+      </div>
+      <div className="section-card">
+        <BookSearch books={filteredBooks} onSearch={handleSearch} />
+      </div>
+      <div className="section-card">
+        <BookList books={filteredBooks} reservations={reservations} onReserve={handleReserve} selectedUserId={selectedUserId}/>
+      </div>
+      <div className="section-card">
+        <ReservationHistory reservations={reservations} books={books} users={users}/>
+      </div>
     </div>
   )
 }

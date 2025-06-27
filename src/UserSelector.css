@@ -1,15 +1,69 @@
-.select-user {
-  min-width: 200px;
-  height: 2.2em;
-  padding: 0.5em 1.5em;
-  font-size: 1.1em;
-  border-radius: 8px;
-  border: 2px solid #747bff;
-  background-color: #f9f9f9;
-  color: #213547;
-  margin: 0.5em 0;
+.user-selector-container {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
+
+.user-selector-title {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.user-selector-label {
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+.select-user {
+  min-width: 250px;
+  height: 2.5em;
+  padding: 0.5em 1em;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  margin: 0.5em 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-weight: 500;
+}
+
 .select-user:hover {
-  border-color: #0fb4b4;
-  background-color: #e3f2fd;
+  border-color: rgba(255, 255, 255, 0.8);
+  background-color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.select-user:focus {
+  outline: none;
+  border-color: white;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.select-user option {
+  background-color: white;
+  color: #333;
+  padding: 0.5em;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .select-user {
+    min-width: 200px;
+    font-size: 0.9rem;
+  }
+
+  .user-selector-container {
+    padding: 1rem;
+  }
 }

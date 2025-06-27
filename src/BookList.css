@@ -1,9 +1,116 @@
-.Reservation-Button{
-    margin-left: 30px !important;
-    margin-bottom: 5px !important;
-    padding: 5px 10px !important;
-    font-size: 8px !important;
+.book-list-container {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
-.list{
-    text-align: left;
+
+.book-list-title {
+  color: #333;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.book-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.book-item {
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-left: 4px solid #667eea;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.book-info {
+  flex: 1;
+  text-align: left;
+}
+
+.book-title {
+  font-weight: 600;
+  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.book-author {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.book-isbn {
+  color: #888;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.book-status {
+  color: #e74c3c;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+}
+
+.Reservation-Button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  border: none !important;
+  padding: 0.6em 1.2em !important;
+  border-radius: 8px !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  margin-left: 1rem !important;
+}
+
+.Reservation-Button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4) !important;
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%) !important;
+}
+
+.Reservation-Button:disabled {
+  background: #ccc !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .book-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .Reservation-Button {
+    margin-left: 0 !important;
+    margin-top: 0.5rem !important;
+    width: 100% !important;
+  }
+
+  .book-list-container {
+    padding: 1rem;
+  }
 }
