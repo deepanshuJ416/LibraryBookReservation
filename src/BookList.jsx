@@ -8,6 +8,7 @@ export default function BookList({books , reservations, onReserve, selectedUserI
               {
                 books.map((book)=> {
                     const isReserved = reservations.some((r)=> r.bookId === book.id);
+                    console.log(`Book: ${book.title}, isReserved: ${isReserved}, selectedUserId: ${selectedUserId}`);
                     return (
                         <li key={book.id} className='list'> {book.title} by {book.author} ISBN: {book.isbn}
                             {isReserved ? (<span> (Reserved)</span>) : selectedUserId ? (<Button variant="outlined" className='Reservation-Button' onClick={() => onReserve(book.id)}>Reserve</Button>) : null}

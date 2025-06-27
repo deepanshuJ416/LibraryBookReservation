@@ -25,7 +25,7 @@ function App() {
     ]);
     const[reservations , setReservations] = useState([]);
     const handleReserve = (bookId) => {
-      setReservations([...reservations, {bookId , userId:selectedUserId , date:new Date().toLocaleDateString()}]);
+      setReservations([...reservations, {bookId , userId:Number(selectedUserId) , date:new Date().toLocaleDateString()}]);
     }
     //search
     const[filteredBooks , setFilteredBooks] = useState(books);
@@ -35,17 +35,20 @@ function App() {
         setFilteredBooks(books);
       }else{
         const filtered = books.filter((book)=> book.title.toLowerCase().includes(searchTerm.toLowerCase()) || book.author.toLowerCase().includes(searchTerm.toLowerCase()) || book.isbn.toLowerCase().includes(searchTerm.toLowerCase()));
-        console.log("SHOWING FILTERED BOOKS" , filtered);
+        console.log("SHOWING FILTERED BOOKS" , filtered);    //includes is used to check if the search term is present in the book title, author, or ISBN
         setFilteredBooks(filtered);
       }
     }
+
+    //get book details or history
+
   return (
     <div className='app-container'>
       <h2 className='app-title'>Library Book Reservation System</h2>
       <UserSelector users={users} selectedUserId={selectedUserId} onSelectUser={setSelectedUserId} />
       <BookSearch books={filteredBooks} onSearch={handleSearch} />
       <BookList books={filteredBooks} reservations={reservations} onReserve={handleReserve} selectedUserId={selectedUserId}/>
-      <ReservationHistory reservations={reservations}/>
+      <ReservationHistory reservations={reservations} books={books} users={users}/>
     </div>
   )
 }

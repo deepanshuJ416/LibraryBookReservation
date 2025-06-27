@@ -16,3 +16,9 @@
     cursor: pointer;
     margin-left: 10px;
 }
+.search-label{
+    font-weight: bold;
+}
+#search-input{
+    margin-left: 5px;
+}
