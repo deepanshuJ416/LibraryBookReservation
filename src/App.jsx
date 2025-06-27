@@ -15,9 +15,9 @@ function App() {
    const[selectedUserId , setSelectedUserId] = useState("")
 
   const[books , setBooks] = useState([
-    {id:101 , title:"IT ENDS WITH US"},
-    {id:102 , title:"STOP OVERTHINKING"},
-    {id:103 , title:"THINGS WE NEVER GOT OVER"},
+    {id:101 , title:"IT ENDS WITH US" , author:"Colleen Hoover" , isbn:"9781501175467"},
+    {id:102 , title:"STOP OVERTHINKING" , author:"Jenn Sincero" , isbn:"9781501175467"},
+    {id:103 , title:"THINGS WE NEVER GOT OVER" , author:"Colleen Hoover" , isbn:"9781501175467"},
     ]);
     const[reservations , setReservations] = useState([]);
     const handleReserve = (bookId) => {
