@@ -1,11 +1,15 @@
 .select-user {
-    min-width: 200px;
-    height: 2.5em;
-    padding: 0.5em 1.5em;
-    font-size: 1.1em;
-    border-radius: 8px;
-    border: 1px solid #747bff;
-    background-color: #f9f9f9;
-    color: #213547;
-    margin: 0.5em 0;
-  }
+  min-width: 200px;
+  height: 2.2em;
+  padding: 0.5em 1.5em;
+  font-size: 1.1em;
+  border-radius: 8px;
+  border: 2px solid #747bff;
+  background-color: #f9f9f9;
+  color: #213547;
+  margin: 0.5em 0;
+}
+.select-user:hover {
+  border-color: #0fb4b4;
+  background-color: #e3f2fd;
+}
