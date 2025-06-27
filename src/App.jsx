@@ -4,9 +4,11 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import UserSelector from './UserSelector'
 import BookList from './BookList'
+import BookSearch from './BookSearch'
 
 
 function App() {
+  //users
   const[users , setUsers] = useState([
     {id:105 , name:"Deepanshu"},
     {id:205 , name:"Abhishek"},
@@ -14,6 +16,7 @@ function App() {
    ]);
    const[selectedUserId , setSelectedUserId] = useState("")
 
+  //books
   const[books , setBooks] = useState([
     {id:101 , title:"IT ENDS WITH US" , author:"Colleen Hoover" , isbn:"9781501175467"},
     {id:102 , title:"STOP OVERTHINKING" , author:"Jenn Sincero" , isbn:"9781501175467"},
@@ -23,11 +26,24 @@ function App() {
     const handleReserve = (bookId) => {
       setReservations([...reservations, {bookId}]);
     }
+    //search
+    const[filteredBooks , setFilteredBooks] = useState(books);
+    function handleSearch(searchTerm){
+      if(searchTerm === ""){
+        console.log("SHOWING ALL BOOKS");
+        setFilteredBooks(books);
+      }else{
+        const filtered = books.filter((book)=> book.title.toLowerCase().includes(searchTerm.toLowerCase()));
+        console.log("SHOWING FILTERED BOOKS" , filtered);
+        setFilteredBooks(filtered);
+      }
+    }
   return (
-    <div>
+    <div className='app-container'>
       <h2>Library Book Reservation System</h2>
       <UserSelector users={users} selectedUserId={selectedUserId} onSelectUser={setSelectedUserId} />
-      <BookList books={books} reservations={reservations} onReserve={handleReserve} selectedUserId={selectedUserId}/>
+      <BookSearch books={filteredBooks} onSearch={handleSearch} />
+      <BookList books={filteredBooks} reservations={reservations} onReserve={handleReserve} selectedUserId={selectedUserId}/>
     </div>
   )
 }

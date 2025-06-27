@@ -1,0 +1,18 @@
+.search-input{
+    width: 200px;
+    padding: 5px;
+    border: 2px solid #747bff;
+    border-radius: 8px;
+    font-size: 10px;
+    background-color: #f5f5f5;
+    color: #000;
+}
+.search-button{
+    padding: 10px 20px;
+    background-color: #747bff;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 10px;
+    cursor: pointer;
+    margin-left: 10px;
+}
