@@ -5,6 +5,7 @@ import './App.css'
 import UserSelector from './UserSelector'
 import BookList from './BookList'
 import BookSearch from './BookSearch'
+import ReservationHistory from './ReservationHistory'
 
 
 function App() {
@@ -40,10 +41,11 @@ function App() {
     }
   return (
     <div className='app-container'>
-      <h2>Library Book Reservation System</h2>
+      <h2 className='app-title'>Library Book Reservation System</h2>
       <UserSelector users={users} selectedUserId={selectedUserId} onSelectUser={setSelectedUserId} />
       <BookSearch books={filteredBooks} onSearch={handleSearch} />
       <BookList books={filteredBooks} reservations={reservations} onReserve={handleReserve} selectedUserId={selectedUserId}/>
+      <ReservationHistory reservations={reservations}/>
     </div>
   )
 }
