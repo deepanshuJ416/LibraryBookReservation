@@ -24,7 +24,7 @@ function App() {
     ]);
     const[reservations , setReservations] = useState([]);
     const handleReserve = (bookId) => {
-      setReservations([...reservations, {bookId}]);
+      setReservations([...reservations, {bookId , userId:selectedUserId , date:new Date().toLocaleDateString()}]);
     }
     //search
     const[filteredBooks , setFilteredBooks] = useState(books);
@@ -33,7 +33,7 @@ function App() {
         console.log("SHOWING ALL BOOKS");
         setFilteredBooks(books);
       }else{
-        const filtered = books.filter((book)=> book.title.toLowerCase().includes(searchTerm.toLowerCase()));
+        const filtered = books.filter((book)=> book.title.toLowerCase().includes(searchTerm.toLowerCase()) || book.author.toLowerCase().includes(searchTerm.toLowerCase()) || book.isbn.toLowerCase().includes(searchTerm.toLowerCase()));
         console.log("SHOWING FILTERED BOOKS" , filtered);
         setFilteredBooks(filtered);
       }
